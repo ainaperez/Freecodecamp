@@ -54,18 +54,21 @@ a{
     list-style: none;
 }
 
-#navbar>ul>li{
+#navbar>ul>a>li{
     padding: 2rem;
 }
 
-#navbar>ul>li:hover{
+#navbar>ul>a>li:hover{
     background-color: var(--main-white);
-    color: white;
+    color: black;
 }
 
 #welcome-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
-    padding-top: 50vh;
     text-align: center;
     background-color: var(--main-white);
 }
@@ -81,12 +84,12 @@ a{
     grid-gap: 2rem;
 }
 
-#projects-grid>a{
+.project-tile{
     background-color: var(--kaki);
     border-radius: 5px;
 }
 
-#projects-grid>a:hover{
+.project-tile:hover{
     animation: float 2s ease-in-out infinite;
 }
 
@@ -121,16 +124,56 @@ a{
 }
 
 #contacts-flex{
+    max-width: 600px;
+    margin: auto;
     display: flex; 
+    justify-content: center;
+    
 }
 
 #contacts-flex>a{
-    display: flex; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    margin: 0 15px;
+}
+
+#contacts-flex>a:hover{
+    opacity: 0.7;
 }
 
 .icon{
     width: 4rem;
 }
 
+footer{
+    background-color: var(--kaki);
+    margin-top: 2rem;
+    padding: 2rem 1rem;
+}
+
+footer>p{
+    font-size: 1rem;  
+}
+
+@media only screen and (max-width: 768px) {
+
+    #contacts-flex{
+        flex-direction: column; 
+        align-items: center;
+        
+        
+    }
+    
+    #contacts-flex>a{
+        flex-direction: row; 
+        justify-items: center;
+        padding-bottom: 15px;
+        width: 169px;
+        
+    }
+
+
+}
 
 
