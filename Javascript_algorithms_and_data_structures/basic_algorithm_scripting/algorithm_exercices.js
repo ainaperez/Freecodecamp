@@ -154,9 +154,94 @@ function frankenSplice(arr1, arr2, n) {
   
   frankenSplice([1, 2, 3], [4, 5, 6], 1);
 
+/*Falsy Bouncer
+Remove all falsy values from an array.
 
+Falsy values in JavaScript are false, null, 0, "", undefined, and NaN.
 
+Hint: Try converting each value to a Boolean.*/
 
+  function bouncer(arr) {
+
+    for(let i = 0; i < arr.length; i++){
+      if(!arr[i]){
+        arr.splice(i,1);
+          i--
+          }
+        }
+      
+    
+      console.log(arr);
+      return arr;
+    }
+    
+    bouncer([7, "ate", "", false, 9]);
+
+    /*Where do I Belong
+Return the lowest index at which a value (second argument) should be inserted into an array (first argument) once it has been sorted. The returned value should be a number.
+
+For example, getIndexToIns([1,2,3,4], 1.5) should return 1 because it is greater than 1 (index 0), but less than 2 (index 1).
+
+Likewise, getIndexToIns([20,3,5], 19) should return 2 because once the array has been sorted it will look like [3,5,20] and 19 is less than 20 (index 2) and greater than 5 (index 1).*/
+
+function getIndexToIns(arr, num) {
+    if(arr.indexOf(num) == -1){
+    arr.push(num);
+    }
+  
+    arr.sort(function(a, b) {
+    return a - b;
+    });
+    
+    return arr.indexOf(num);
+  }
+  
+  getIndexToIns([3, 10, 5], 3);
+
+ /*Mutations
+Return true if the string in the first element of the array contains all of the letters of the string in the second element of the array.
+
+For example, ["hello", "Hello"], should return true because all of the letters in the second string are present in the first, ignoring case.
+
+The arguments ["hello", "hey"] should return false because the string hello does not contain a y.
+
+Lastly, ["Alien", "line"], should return true because all of the letters in line are present in Alien.*/
+
+function mutation(arr) {
+    var a = arr[0].toLowerCase().split('');
+    var b = arr[1].toLowerCase().split('');
+  
+    for(let i = 0; i < b.length; i++){
+      if(a.indexOf(b[i]) > -1){
+      b[i] = true;
+    }else{
+      b[i] = false;
+    }}
+  
+    if(b.indexOf(false) > -1){
+      return false;
+    }else{
+      return true;
+    }}
+  
+  mutation(["hello", "Hello"]);
+
+  /*Chunky Monkey
+  
+Write a function that splits an array (first argument) into groups the length of size (second argument) and returns them as a two-dimensional array.*/
+
+function chunkArrayInGroups(arr, size) {
+    let newArr= [];
+    for(let i = 0; i < arr.length; i++){
+        newArr.push(arr.splice(i, size));
+        i--;
+    }
+      
+      console.log(newArr)
+      return newArr;
+    }
+    
+    chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3);
 
 
 
