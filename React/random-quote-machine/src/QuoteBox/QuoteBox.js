@@ -32,9 +32,27 @@ class QuoteBox extends Component{
     newQuoteHandler = () => {
         const randomIndex = Math.floor(Math.random()*this.state.quotes.length+1);
             this.setState({quote: this.state.quotes[randomIndex]})
-            console.log(this.state.quote)
+            
+        this.colorChange()
 
     }
+
+    colorChange = () => {
+        const colors = [
+            '#c9e265', 
+            '#a24936', 
+            '#ffde59', 
+            '#ffbe59',
+            '#5271ff',
+            '#8c52ff',
+            '#ff5757', 
+            '#03989e', 
+            '#cb6ce6', 
+        ]; 
+        const randomColor = colors[Math.floor(Math.random()*colors.length)];
+
+        document.getElementById('wrapper').animate({backgroundColor : randomColor}, {duration: 1000, fill: 'forwards'});
+        }
 
     
 
@@ -48,13 +66,12 @@ class QuoteBox extends Component{
             const twitter = 'twitter.com/intent/tweet?text='+ encodeURIComponent(this.state.quote.quote + "-' "+ this.state.quote.author + " '.")
 
            loadedQuote= (
-            <div className={classes.wrapper}>
+            <div id='wrapper' className={classes.wrapper}>
                 <div id='quote-box' className={classes.quoteBox}>
                 <Text quote={this.state.quote.quote}/>
                 <Author author={this.state.quote.author}/>
-                    <div>
+                    <div className={classes.buttons}>
                         <TweetQuote link={twitter} />
-                        
                         <NewQuote clicked={this.newQuoteHandler}/>
                     </div>
                 </div>

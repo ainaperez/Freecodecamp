@@ -1,19 +1,11 @@
-import React, {Component} from 'react'; 
+import React from 'react'; 
+import classes from './Text.module.css'
 
-class Text extends Component {
+const text = (props) => (
 
-    
-    render(){
-        
-
-        return(
-            <p id='text'>{this.props.quote}</p>
-            ) 
-    }
-    
-
-    
-}
+    <p id='text' className={classes.textDiv}>{props.quote}</p>
+               
+)
 
 
-export default Text; 
+export default text; 
