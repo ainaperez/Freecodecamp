@@ -5,6 +5,7 @@ import Text from '../Components/Text/Text';
 import Author from '../Components/Author/Author';
 import TweetQuote from '../Components/TweetQuote/TweetQuote';
 import NewQuote from '../Components/NewQuote/NewQuote';
+import classes from './QuoteBox.module.css'
 
 
 class QuoteBox extends Component{
@@ -47,15 +48,17 @@ class QuoteBox extends Component{
             const twitter = 'twitter.com/intent/tweet?text='+ encodeURIComponent(this.state.quote.quote + "-' "+ this.state.quote.author + " '.")
 
            loadedQuote= (
-                <div id='quote-box'>
-            <Text quote={this.state.quote.quote}/>
-            <Author author={this.state.quote.author}/>
-            <div>
-                <TweetQuote link={twitter} />
-                
-                <NewQuote clicked={this.newQuoteHandler}/>
+            <div className={classes.wrapper}>
+                <div id='quote-box' className={classes.quoteBox}>
+                <Text quote={this.state.quote.quote}/>
+                <Author author={this.state.quote.author}/>
+                    <div>
+                        <TweetQuote link={twitter} />
+                        
+                        <NewQuote clicked={this.newQuoteHandler}/>
+                    </div>
+                </div>
             </div>
-        </div>
             )
         }
         

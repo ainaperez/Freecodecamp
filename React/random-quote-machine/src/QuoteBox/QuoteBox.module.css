@@ -1,0 +1,31 @@
+.wrapper{
+    height: 100vh;
+    display: flex;
+    background: rgb(121,9,117);
+background: radial-gradient(circle, rgba(121,9,117,0.6330532212885154) 0%, rgba(255,0,144,0.7282913165266107) 50%, rgba(121,9,118,0.6904761904761905) 100%);
+    
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
+
+.quoteBox{
+    position: relative;
+    max-width: 80%;
+    margin: auto;
+    padding: 50px 30px;
+    border: 1px solid white;
+    border-radius: 10px;
+    /*box-shadow: 5px 5px 15px 5px #F4DCFF;*/ 
+    background-color: white;
+}
+
+@media(max-width: 435px){
+    .quoteBox{
+        max-width: 65%;
+        padding: 50px 20px;
+        
+    } 
+}
